@@ -1,18 +1,14 @@
 import "./index.css";
 
-export function ProductCard({ product }) {
-  const { image, title, category, price } = product;
+export function ProductCard(props) {
+  const { img, category, name, price } = props.data;
+
   return (
     <div className="product-card">
-      <div className="product-card__main">
-        <img className="product-card__image" src={image} alt="" />
-        <p className="product-card__category">{category}</p>
-        <h2 className="product-card__title">{title}</h2>
-      </div>
-      <div className="product-card__footer">
-        <p className="product-card__price">${price}</p>
-        <button className="product-card__button">Add to Card</button>
-      </div>
+      <img width="200" src={img} alt="" />
+      <div>{category}</div>
+      <h4>{name}</h4>
+      <div>{price}</div>
     </div>
   );
 }
